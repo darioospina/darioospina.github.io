@@ -1,0 +1,60 @@
+/* Mi primera hoja de estilo CSS */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: url(../Imagenes/ladrillos.jpg) repeat-y;
+    width: 1000px;
+}
+img {
+    border: 10px solid #7C05F2;
+}
+
+h1 {
+    background-color: sandybrown;
+    border: 10px dotted #6204BF
+}
+h2, h3, a.femasters:link, blockquote {
+    background-color: white;
+    border: 5px dashed #050259
+}
+blockquote {
+    background: url(https://previews.123rf.com/images/julioaldana/julioaldana1906/julioaldana190600084/128924301-colombia-patriotic-banner-design-colombian-flag-colors-vector-illustration.jpg) no-repeat left top; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 3rem;
+    font-style: oblique;
+    border: 3px Dashed green;
+    text-align: center;
+}
+cite {
+    font-size: 2rem;
+    background-color: honeydew;
+}
+.bigbold{
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+ul a:link {
+    font-weight: bold;
+    text-decoration: none;
+    color: #F23827;
+    font-family: cursive;
+}
+a:visited {
+    font-weight: normal;
+    text-decoration: darkorange ;
+    color:#026873;
+}
+a:focus{
+    color:greenyellow;
+}
+a:hover {
+    background-color:black;
+    font-weight: inherit;
+    text-decoration-line: underline;
+    color: blue
+}
+a.femasters:link { 
+    font-size: 2rem;
+}
+p{
+    line-height: 1.5    rem;
+}

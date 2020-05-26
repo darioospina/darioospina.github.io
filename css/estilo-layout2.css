@@ -1,0 +1,36 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}   
+nav {
+    border: 0px solid blue;
+}
+nav ul{
+    list-style-type: none;
+    border: 0px dashed red;
+    padding: 0;
+    margin: 0;
+}
+nav li {
+    border: 0px solid yellow;
+    width: 10rem;
+    background-color: cadetblue;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    /* Este comando lo que hace es poner los botones horizontales */
+    display: inline-block;
+}
+nav a{
+    border: 3px dotted green;
+    font-size: 1.5rem;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+/* El comando display:block sirve para que el área del hipervínculo cubra todo el recuadro y no únicamente el área del enlace */
+    display: block;
+    padding: 0.5rem;
+}
+nav a:hover{
+    background-color:red;
+    border: 21px solid black;
+    color: yellow;
+}

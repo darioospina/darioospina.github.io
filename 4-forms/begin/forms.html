@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Alien Abduction Order Form</title>
+	<link href="css/forms.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	
+	<div class="wrapper">
+		<section>
+			<h1>Alien Abduction Order Form</h1>
+			<p>Fill out the form below to place an order for an alien abduction by one of our fine UFOs.</p>
+		<!--El atributo "action" dentro de form es parte del script que envía a xx correo los datos del formulario-->
+		<form method="POST" action="https://e3vwdl4bpd.execute-api.us-west-2.amazonaws.com/default/API2SES">
+		<fieldset>
+			<!-- la etiqueta fieldset sirve para crear un cuadro alrededor de la información. De este modo se puede agrupar por secciones el formulario -->
+				<legend>Your contact information</legend>
+			<!--La etiqueta legend le pone un título al fieldset-->
+				<label for="name">Your name </label> <input type="text" id="name" name="name"> 
+			<!--La etiqueta label organiza de forma horizontal los campos del formulario-->
+				<label for="phone">Phone number</label> <input type="tel" id="phone" name="phone" placeholder="Favor incluir su número acá">
+			<!--El ID en el input conecta con el FOR del label-->
+				<label for="email">Email</label> <input type="email" id="email" name="email">
+		</fieldset>
+
+		<fieldset>
+			<!--Las etiquetas "legend" son "inline elements". Los "inline elements caben dentro de otro contendio y ocupan el espacio de su propio contenido mientras que los "block-level elements" siempre empieza en una nueva línea y ocupa el ancho completo de la ventana-->
+			<legend>About your abduction </legend>
+				<label for="date">Requested  date</label> <input type="date" id="date" name="date">
+				<label>How many people would you like abducted?</label> <input type="number" id="qty" name="qty" min="1" max="10">
+
+				<p>What type of UFO do you prefer?</p>
+						<label>
+							<input type="radio" name="ufotype" value="classic" checked>	Classic oval UFO
+						</label>
+						<!--El "name" debe ser igual para todas las opciones para que se pueda escoger solo una-->
+						<label>
+							<input type="radio" name="ufotype" value="starwars">Star Wars-style Imperial cruiser
+						</label>
+						<label>
+							<input type="radio" name="ufotype" value="galactica">Battlestar Galactica-style Viper
+						</label>
+						<label>
+							<input type="radio" name="ufotype" value="startrek">Borg-style cube
+						</label>
+						<label>
+							<input type="radio" name="ufotype" value="any"> Whatever is in the neighborhood
+						</label>
+
+				<!--For="XX" y ID="XX" siempre deben ser iguales, para formularios en HTML el ID solo es necesario cuando hay labels-->
+				<label for="abtype">What type of abduction experience do you want?</label>
+						<select id="abtype" name="abtype">
+						<option selected>Select one...</option>
+						<option value="tour">Tour of the solar system</option>
+						<option value="dinner">Alien dinner and discussion</option>
+						<option value="dance">Alien dance lessons</option>
+						<option value="whales">Whale watching</option>
+						</select>
+				
+				<label for="comments">Special requests:</label>
+				<textarea id="comments" name="comments"></textarea>
+				<label>
+				<input id="subscribe" value="subscribe" name="subscribe" type="checkbox" checked> Add me to your email list</label>
+			<input id="send_to" type="hidden" name="send_to" value="da_os_la@hotmail.com">
+			<button type="submit">Order your abduction experience!!</button>
+		</fieldset>
+		</form>				
+		</section>
+		<aside>
+			<h3>Our Location</h3>
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15903.938772402416!2d-74.04396243939678!3d4.772595944542531!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f85f47cc0a975%3A0xc938f080ba8d6c71!2zVGliYWJpdGEsIFVzYXF1w6luLCBCb2dvdMOh!5e0!3m2!1ses-419!2sco!4v1590440375728!5m2!1ses-419!2sco" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+			<address>
+				Frontend Masters &middot;
+				60 South 6th Street &middot;
+				Suite 3625 &middot;
+				Minneapolis, MN 55402
+			</address>
+		</aside>
+	</div>
+	<script src="js/forms.js"></script>
+	<p class="Regresar">Regresar a <a href="../../index.html">Home</a></p>
+</body>
+</html>
+
+
+
+
+

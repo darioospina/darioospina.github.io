@@ -1,0 +1,94 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	padding: 0;
+	background-image: url(../img/galaxy.jpg);
+}
+.wrapper {
+	width: 80%;
+	margin: 0 auto;
+	padding: 1em;
+	display: flex;
+	flex-flow: row nowrap;
+	background-color: #efb106;
+}
+p {
+	margin-bottom: 0;
+	margin-top: 2rem;
+}
+section {
+	flex-basis: 57%;
+	margin-right: 10%;
+}
+aside {
+	flex-basis: 33%;
+}
+/*Hay dos formas de aplicar unos atributos a varios selectores. Una es creando un "class" en HTML y  otra es usando el identificador que ya tiene, en este caso hay solo un "for=abtype" entonces se le puede aplicar poniéndolo entre paréntesis cuadrados []*/
+p, [for="abtype"], [for="comments"] {
+	margin: 2rem 0 0 0;
+}
+fieldset {
+	border: 1px solid black ;
+	border-radius: 10px;
+	margin: 2rem 0;
+}
+legend {
+	font-weight: bold;
+	font-size: 1.3rem;
+	margin: 1rem 0;
+}
+label {
+	display:block;
+	padding-bottom: 0.3rem;
+}
+textarea {
+	height: 10rem;
+	padding: 1rem;
+}
+select {
+	font-size: 1rem;
+}
+button {
+	font-size: 1rem;
+	margin: 2rem 0;
+	background-color: #5f5f5f;
+	color: whitesmoke;
+	border: none;
+	padding: 0.3rem 1rem;
+	border-radius: 10px;
+}
+button:hover {
+	background-color:black;
+	color: yellow;
+}
+/* EL selector "not" permite excluir un tipo de atributo, en este caso a los input del tipo radio y a los tipo checkbox no les aplica lo siguiente */
+input:not([type="radio"]):not([type="checkbox"]), textarea {
+	display: block;
+	margin-bottom: 2rem;
+	width: 20rem;
+	padding: 0 1rem;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 1rem;
+	border-radius: 10px;
+	border: none;
+}
+h1, legend, h3 {
+	/* La siguiente fuente está vinculada con el link de Google Fonts que incluí al comienzo del HTML*/
+	font-family: 'Indie Flower', cursive;
+}
+.Regresar {
+	background-color: white;
+}
+
+
+
+
+
+
+

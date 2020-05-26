@@ -1,0 +1,14 @@
+ul {
+    list-style-type: none;
+    padding:0;
+    margin:0;
+    /* Display:flex para desplegar todo de forma horizontal*/
+    display:flex;
+    /* Este comando indica 1) la posición en filas o columnas de cómo está dispuesta la info (row / column) y 2) si una vez se achica la pantalla, la info se pasa a otra fila o cambia de tamaño para mantenerse en una sola fila (wrap / nowrap) */
+    flex-flow: row nowrap;
+    justify-content: flex-end;
+}
+li {
+    border: 3px solid blue;
+    flex-basis: 10%
+}

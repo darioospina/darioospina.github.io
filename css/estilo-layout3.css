@@ -1,0 +1,49 @@
+.floatleft {
+    float: left;
+    border: solid;
+    border-width: 2px 2px 2px 5px;
+    border-top-color: crimson;
+    border-right-color: yellow;
+    border-left-color: blue;
+    border-bottom-color: darkgreen;
+    /* Top Right Bottom Left - TRouBLe */
+    margin: 0 1rem 1rem 0;
+}
+.floatright {
+    float: right;
+    margin: 1rem 0 1rem 1rem; 
+}
+article {
+    width: 40rem;
+    border: 1px blue solid;
+    text-align: justify;
+    /* TopRigh and BottomLeft - "Auto" automatically divides the screen in two parts and show the object in the center */
+    padding: 1rem;
+    margin: 1rem auto;
+    background-color: burlywood
+}
+/* El siguiente comando limpia los "float" para que el contenido quepa todo dentro del recuadro, sino se hace esto la última imagen por ejemplo queda fuera del artículo */
+article:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+blockquote {
+    border-top: solid red 2px;
+    border-right: solid red 2px;
+    background-color: cornsilk;
+    margin: 0 0 0rem 22rem;
+    padding: 1rem;
+    width: 15rem;
+    border-radius: 50px;
+}
+blockquote p{
+    margin:0 1rem 1rem 1rem;
+}
+blockquote cite {
+    margin:0 0 0 1rem;
+    border: 0px solid black;
+}
+h1 {
+    text-align: center;
+}
