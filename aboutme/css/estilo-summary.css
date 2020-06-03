@@ -1,18 +1,59 @@
+body {
+    margin: 0;
+    padding: 0;
+}
 .menu {
-    border: 3px solid blue;
     margin-bottom: 3rem;
+    background-color: #263640;
+}
+.menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display:flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+.menu li {
+    flex-basis: 15%;
+    text-align: center;
+    padding: 0.2rem 0;
+}
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    font-family: 'Lobster', cursive;
+}
+.menu a:hover {
+    color: rgb(23, 235, 217);
 }
 .wrapper {
-    border: 3px solid red;
+    background-color: #70848C;
+    width: 80%;
+    margin: 0 auto;
 }
-.aboutme, h1, img {
+header {
+    display: flex;
+    flex-flow: row nowrap;
+}
+.header_der {
+    border: 1px red solid;
+    flex-basis: 50%
+}
+.header_izq {
+    border: 1px red solid;
+    flex-basis: 50%
+}
+.header_izq, h1, img {
     text-align: center;
 }
-.aboutme img {
+.header_izq img {
     border-radius: 150px;
     border-style: initial;
+    margin: 1rem 0 0 0;
 }
-.aboutme h1 {
+.header_izq h1 {
     width: 30rem;
     margin: 0.5rem auto;
     border-top: 3px solid #253C3D;
