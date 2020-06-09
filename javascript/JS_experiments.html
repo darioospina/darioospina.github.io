@@ -8,7 +8,129 @@
 <body>
     <h1>JavaScript Experiments</h1>
    <script src="JS_files/experiment_summary.js"></script><p>Experiment Summary</p>
-    <p>Regresar a <a href="../index.html">Home</a></p> 
+
+
+<div>Experiment Red Square</div>
+      <style>
+        .red-square {
+          width: 100px;
+          height: 100px;
+          background-color: crimson;
+        }
+        .ocultarCuadrado {
+          display: none;
+        }
+      </style>
+<!-- The ".hidden" part of <style> code is only for the Experiment # 7 from "THE DOM" section -->
+  <div class="red-square"></div>
+      <script>
+        const redSquare = document.querySelector('.red-square'); 
+        redSquare.style.backgroundColor = 'limegreen';
+      </script>
+      <!--NOTAS DEL SCRIPT:   
+          document: Se refiere al documento HTML sobre el que se está trabajando
+          .querySelector: Solo toma el primer ejemplo que encuentra, en este caso solo va a ejecutarse sobre el primer red-square que encuentre.
+          .querySelectorAll: A diferencia del anterior, ejecuta el código sobre todo
+          A diferencia de CSS, las propiedades se separan por una mayúscula, ej: en CSS background-color, en JS backgroundColor 
+      -->
+<br>
+
+
+
+<div>Events & Listeners</div>
+    <button class="botonEjemplo">Click aquí!</button>
+        <script>
+          const button = document.querySelector(".botonEjemplo");
+          button.addEventListener("click",function (){
+            alert("Hola..saludos!!");
+          });
+        </script>
+        <!--NOTAS DEL SCRIPT:
+          El evento "click" acciona la función una vez se hace click sobre un elemento, en este caso un botón
+        -->
+<br><br><br>
+
+
+
+<div>KeyUp event</div>
+    <input placeholder="Escribe algo acá" class="Input-para-copiar"/>
+    <p class="p-para-copiar-a">Aquí se va a duplicar el texto introducido arriba</p>
+        <script>
+          const input = document.querySelector(".Input-para-copiar");
+          const paragraph = document.querySelector(".p-para-copiar-a");
+
+          input.addEventListener("keyup", function (){
+            paragraph.innerText = input.value;
+          });
+        </script>
+        <!--NOTAS DEL SCRIPT:
+          El evento "keyup" acciona la función una vez se levanta el dedo del teclado, mientras se mantenga presionado no hace nada. En este caso lo que está haciendo es duplicar abajo lo que se escribe en el campo "input" pero solo lo duplica cuando se levanta el dedo de la tecla
+        -->
+            <!-- Otro método que funciona igual para el script anterior sería el siguiente:
+            <div>KeyUp event - Método 2</div>
+                <input placeholder="Escribe algo acá 2" class="Input-para-copiar2"/>
+                <p class="p-para-copiar-a2">Aquí se va a duplicar el texto introducido arriba 2</p>
+                    <script>
+                      const paragraph = document.querySelector(".p-para-copiar-a2");
+                      
+                      document.querySelector(".Input-para-copiar2").addEventListener("keyup", function (event) {
+                        console.log("event")
+                        paragraph.innerText = event.target.value;
+                      });
+                    </script>
+            -->
+<br><br><br>
+
+
+
+<div>Change event</div>
+        <style>
+          .caja-color {
+            background-color: yellow;
+            width: 100px;
+            height: 100px;
+          }
+        </style>
+        <div class="caja-color"></div>
+        <input class="color-input" placeholder="Escriba un color aquí" />
+        <script>
+          const input2 = document.querySelector(".color-input");
+          const paragraph2 = document.querySelector(".caja-color");
+
+          input2.addEventListener("change", function() {
+            paragraph2.style.backgroundColor = input2.value;
+          })
+        </script>
+        <!--NOTAS DEL SCRIPT:
+        El evento "change" acciona la función una vez se hace click por fuera del campo "input"
+        -->
+        <br><br><br>
+
+
+
+<div>Event delegation</div>
+        <div class="contenedor-de-botones">
+          <button>1</button>
+          <button>2</button>
+          <button>3</button>
+          <button>4</button>
+          <button>5</button>
+        </div>
+        <script>
+          document.querySelector(".contenedor-de-botones").addEventListener("click", function (eventoXYZ) {
+            if (eventoXYZ.target.tagName === "BUTTON") {
+              alert(`Hiciste click en el boton # ${eventoXYZ.target.innerText}`);
+            }
+          });
+        </script>
+        </script>
+        <!--NOTAS DEL SCRIPT:
+        Por medio de "target" se pueden accionar varios botones por medio de la misma función
+        Se incluye el condicional dentro de la función para que se ejecute la función solamente sobre los botones y no sobre todo el div "contenedor-de-botones"
+        -->
+
+
+    <br><br><br><p>Regresar a <a href="../index.html">Home</a></p> 
     <br>
     <p><a href="https://developer.mozilla.org/en-US/" target="_blank"> MDN - Biblioteca de funciones y scripts</a></p>
 </body>

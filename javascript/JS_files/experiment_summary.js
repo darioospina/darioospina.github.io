@@ -240,7 +240,6 @@ FUNCTIONS AND PARAMETERS
 
 
 */
-
 // EXPERIMENTO # 1 - Functions 
 
 /* La siguiente fórmula va a agregar a un numero dado (number) + 2. Primero se escribe la formula y luego se agrega el valor de la variable number. El input sería "function addTwo" y el output es el "return" */ 
@@ -462,8 +461,6 @@ perro.hablar("jaja");
 // EXPERIMENTO # 4 - Objects + objects 
 
 /* Los objetos pueden tener objetos dentro */
-
-
 const yo = {
     nombre: {
         primerNombre: "Dario",
@@ -549,6 +546,7 @@ const numerosPrimos = [1,2,3,5,7,11,13,17]
 console.log(numerosPrimos.length); // Arroja el número de numeros primos que hay dentro del Array
 console.log(numerosPrimos.join(" * ")) // Trae todos los números y agrega un * o lo que se ponga entre "", entre cada número
 
+
 // EXPERIMENTO # 4 - Arrays + Push and Pop 
 
 const ejemploXY = ["A", "B", "C", "D", "E"];
@@ -569,7 +567,7 @@ const agregarNuevo = ejemploXY.splice(0,1, {"Nombre": "Dario", "Apellido": "Ospi
 console.log(ejemploXY);
 
 ejemploXY[0].SegundoApellido = "Latorre"; // Anexa contenido adicional al elemento seleccionado
-
+console.log(ejemploXY);
 
 
 
@@ -581,7 +579,6 @@ LOOPING OVER ARRAYS
 
 
 */  
-
 // EXPERIMENT # 1 - LOOPING OVER ARRAYS 
 
 /* Ejecuta la función para cada ítem de la lista (uno por uno) */
@@ -741,14 +738,14 @@ function addTwoToEveryNumberInTheList (list) {
       newList.push(list[i] + 2);
     }
     return newList;
-  } 
+  }
 
 
 // TESTING # 2
 
 function findLargestNumber(list) {
     // return the largest number in array
-    let largest = list[0];
+    let largest;
     for (let i = 1; i < list.length; i++) {
       if (list[i] > largest) {
         largest = list[i];
@@ -756,3 +753,206 @@ function findLargestNumber(list) {
     }
     return largest;
   }
+
+
+// TESTING # 3
+
+  function makeDogObject() {  
+    // return a dog object that
+    //   has a speak method that returns woof
+    //   has a name property of "Fido"
+    //   has a color property of "white"
+    //   has an age property of 6
+    return {
+      speak() {
+        return "woof"
+      },
+      name: "Fido",
+      color: "white",
+      age: 6,
+    };
+  }
+console.log(makeDogObject())
+
+// TESTING # 4
+
+/* Method 1 */
+function getListOfNames(list) {
+    // list is an array of objects that looks like this
+    // { name: "Some Person", jobTitle: "Boss Person", age: 30 }
+    // return a list of all the workers' names
+  const names = list.map(function (person) {
+    return person.name
+  })
+    return names;
+  }
+
+/* Method 2 */
+function getListOfNames2(list) {
+    const names = [];
+    for (let i = 0; i < list.length; i++) {
+        names.push(list[i].name)
+    }
+    return names;
+}
+
+// TESTING # 5
+
+function getAverageAge(list) {
+    // using the same list as above, get the average age of all the workers'
+    let sum = 0;
+    for (let i = 0; i < list.length; i++) {
+      sum += list[i].age;
+    }
+    return sum / list.length;
+  }
+
+// TESTING # 6
+
+/* Method 1 */
+function getAllEngineers(list) {
+    // using the same list as above, return a list of all people who have the word "Engineer" in their jobTitle
+    const engineers =[]
+    for (let i = 0; i < list.length; i++) {
+      const person = list[i];
+      if (person.jobTitle.includes("Engineer")) {
+        engineers.push(person.name);
+      }
+    }
+    return engineers;
+  }
+
+  /* Method 2 */
+function getAllEngineers2(list) {
+    const engineers = list
+    .filer(({ jobTitle }) => jobTitle.includes("Engineer"))
+    .map((person) => {return person.name })
+
+    return engineers;
+}
+
+// TESTING #  7
+
+/* Method 1 */
+function sort(list) {
+    // sort a list of numbers into ascending order
+    // if you need more help, Google how to do bubble sort
+    // you can sort, if you want to write it by hand, use bubble sort or insertion sort
+    const sortedList = list.sort(function(num1, num2) { 
+      if (num1 > num2) {
+      return 1;
+    } else if (num1 < num2) {
+      return -1;
+    } return 0;
+       })
+    return sortedList;
+  }
+
+/* Method 2 */
+function sort2(list) {
+    const sortedList = list.sort2((a, b) => a - b);
+    return sortedList;
+ }
+ 
+
+
+
+
+/*
+
+
+THE DOM: INTERACTION WITH THE BROWSER (HTML / CSS)
+
+
+*/  
+// EXPERIMENT # 1 
+/* JavaScript can overwrites CSS */
+// En el siguiente experimento hay un tag de CSS (style) y un script. Referise al HTML JS_experiments.html
+// Desde la consola se pueden cambiar propiedades directamente. Ej: si se escribe lo siguiente se cambia el borde del recuadro: redSquare.style.border = "5px solid blue"
+/* Inspeccionar un elemento:
+Paso 1: En el sitio web, se puede seleccionar un elemento > click derecho > Inspeccionar -->> Como resultado va a resaltar el código
+Paso 2: En la consola se escribe $0 y esto arroja el código HTML asociado a ese elemento
+Paso 3: Teniendo el elemento seleccionado, en la consola se pueden hacer cambios, ejemplo: $0.style.width = "100%"
+*/
+
+// EXPERIMENT # 2
+/* El siguiente experimento es para cambiar propiedades del HTML desde la consola */
+/* En este caso para cambiar el color de los H2 en una página:
+Paso 1: Escoger una página, en este caso se va a cambiar el color de los H2 en la siguiente página: https://frontendmasters.github.io/bootcamp/dom
+Paso 2: Entrar a la consola y entrar el siguiente código: 
+            let TituloSecundario = document.querySelectorAll("H2")
+        Esto va a arrojar "undefined" como resultado
+Paso 3: Ingresar el código: 
+            TituloSecundario
+Paso 4: Ingresar el siguiente código:
+            for (let i = 0; i < TituloSecundario.length; i++) { 
+                TituloSecundario[i].style.color = "#4caf50" 
+            }
+Nota: En el anterior caso, el resultado de H2 fue un NodeList, lo que significa que no se le pueden aplicar ciertas funciones como forEach o .map. Para hacerlo se debe convertir en una "array", la forma de hacerlo es la siguiente:
+            Nota - Paso 1: Ingresar el siguiente código:
+                                x = Array.from(TituloSecundario)
+*/
+
+// EXPERIMENT # 3
+/* El siguiente experimento es parecido al anterior, solo que en este caso voy a agregarle borde y color de fondo al título */ 
+/* También lo voy a hacer sobre la misma pagina web: https://frontendmasters.github.io/bootcamp/dom
+Paso 1: Entrar a la consola e ingresar el siguiente código:
+            let TituloPrincipalNN = document.querySelector("H1")
+        Esto va a arrojar "undefined" como resultado
+Paso 2: Ingresar el código:
+            TituloPrincipalNN.style.boder = "1px solid green";
+            TituloPrincipalNN.style.backgroundColor = "yellow";
+*/
+
+// EXPERIMENT # 4
+/* Esta vez el experimento sobre la siguiente página: https://www.canada.ca/en.html. Voy a cambiar el estilo del vínculo del idioma en la parte superior derecha
+Paso 1: Entrar a la página, click derecho sobre el elemento buscado y click en "inspeccionar"
+        Buscar el ID. En este caso el ID de ese elemento es "wb-lng"
+Paso 2: Ingresar a la consola el siguiente código:
+            let cualquierCosa = document.querySelector("#wb-lng") 
+        Nota: En este caso estoy seleccionando un ID, estos se seleccionan con #IDName. Si se tratara de un class, se seleccionaría así: .ClassName
+Paso 3: Ingresar el siguiente código:
+            cualquierCosa.style.border = "3px dotted blue"
+*/
+
+// EXPERIMENT # 5
+/* El siguiente experimento es para agregar contenido dentro de una página existente desde la consola */
+/* Nuevamente voy a usar la misma página web: https://frontendmasters.github.io/bootcamp/dom 
+Opción 1: Ingresar el siguiente código en la consola:
+            const elementsToChange = document.querySelectorAll('.js-target');
+            for (let i = 0; i < elementsToChange.length; i++) {
+            const currentElement = elementsToChange[i];
+            currentElement.innerHTML = "<H1>Hola mundo!!</H1>";
+            } 
+            "<H1>Hola mundo!!</H1>"
+    Nota: La función innerHTML permite agregar este texto dentro del class="js-target"
+
+Opción 2: Ingresar el siguiente código en la consola:
+            const elementsToChange = document.querySelectorAll('.js-target');
+            for (let i = 0; i < elementsToChange.length; i++) {
+            const currentElement = elementsToChange[i];
+            currentElement.innerText = "Colombia el mejor país del mundo";
+            } 
+    Nota: En este caso la función innerText, reemplaza el texto existente por uno nuevo
+*/
+
+// EXPERIMENT # 6
+/*  1) Se puede seleccionar un elemento y usar las siguientes funciones
+NombreDelElementoSeleccionado.classList --> Como resultado va a arrojar el listado de todas las "class" asociadas a dicho elemento
+    2) Se puede adicionar un "class" a un elemento determinado
+NombreDelElementoSeleccionado.classList.add("Nombre-del-Class-Preferido")
+    3) Se puede remover un "class" ya existente de un elemento determinado
+NombreDelElementoSeleccionado.classList.remove("Nombre-del-Class-Que-Se-Quiere-Eliminar")
+*/ 
+
+// EXPERIMENT # 7
+/*  Este experimento es para desaparecer un elemento.
+Paso 1: Para hacerlo agregué el siguiente código a JS_experiments.html dentro del tag <style>
+            .ocultarCuadrado { display: none}
+Paso 2: Abrir la consola e ingresar el siguiente código y dar enter:
+            const loQueSea = document.querySelector(".red-square")
+Paso 3: Incluir luego el siguiente código:
+            loQueSea.classList.add("ocultarCuadrado")
+        Con esto se desaparecería el cuadrado. Si se quisiera volver a hacer visible, se agregaría el siguiente código:
+            loQueSea.classList.remove("ocultarCuadrado")
+*/
