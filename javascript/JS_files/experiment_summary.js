@@ -598,7 +598,7 @@ for (let i = 0;i < ciudades.length; i++) {
 
 // Method 2
 ciudades.forEach(function(cualquierCosa) {
-    console.log(cualquierCosa);
+    console.log(cualquierCosa.toUpperCase());
 })
 
 
@@ -731,15 +731,18 @@ TESTING
 */  
 // TESTING # 1 
 
-function addTwoToEveryNumberInTheList (list) {
+function addTwoToEveryNumberInTheList () {
     // an example for you to see how the tests work
     const newList = [];
     for (let i = 0; i < list.length; i++) {
       newList.push(list[i] + 2);
     }
     return newList;
-  }
-
+}
+            const Test1 = [1, 3, 5];
+            for (let i = 0; i < Test1.length; i++) {
+            console.log(Test1[i] + 2);
+            }
 
 // TESTING # 2
 
@@ -753,7 +756,6 @@ function findLargestNumber(list) {
     }
     return largest;
   }
-
 
 // TESTING # 3
 
@@ -956,3 +958,20 @@ Paso 3: Incluir luego el siguiente código:
         Con esto se desaparecería el cuadrado. Si se quisiera volver a hacer visible, se agregaría el siguiente código:
             loQueSea.classList.remove("ocultarCuadrado")
 */
+ 
+
+
+
+
+/*
+
+
+NOTAS VARIAS
+
+
+*/  
+/* Sobre typeof y parseInt:    
+if (typeof parseInt(value) === "number") {} // parseInt va a intentar convertir lo que sea en un número. typof está preguntando qué cosa es. En este caso se está diciendo SI el valor ingresado es un número entonces diga que es un número. 
+*/
+
+
