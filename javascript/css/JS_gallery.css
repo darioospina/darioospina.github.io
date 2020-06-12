@@ -1,0 +1,47 @@
+* {
+    box-sizing: border-box;
+    /* El asterisco al principio significa que el estilo dentro de {} aplica a todos los elementos de la página */
+}
+
+.gallery-img {
+    display: none;
+    max-height: 400px;
+}
+
+.active {
+    display: block;
+}
+
+.image-gallery {
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Alineación horizontal dentro del div */
+    align-items: center; /* Alineación vertical dentro del div */
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px 0 0 0;
+}
+
+.button {
+    background-color: #0074d9;
+    color: white;
+    font-size: 20px;
+    padding: 5px 20px;
+    border-color: transparent;
+    border-radius: 5px;
+    cursor: pointer; /* El cursor va a cambiar cuando se está sobre la imagen */
+}
+
+.prev {
+    margin-right: 15px;
+}
+
+.button:disabled {
+    background-color: #777;
+    cursor: not-allowed; /* Esta propiedad se puede usar sobre cualquier elemento, no únicamente sobre un botón */
+}
