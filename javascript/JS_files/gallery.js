@@ -21,6 +21,6 @@ prevButton.addEventListener("click", function() {
     nextButton.disabled = false;
 
     if (currentlySelected === 0) {
-        prevButton = true;
+        prevButton.disabled = true;
     }
 })
