@@ -23,6 +23,14 @@ El script escogido es "Spring". Este es el link directo a CodePen: https://codep
 // NAVIGATION PHYSICS:
 
 const { styler, spring, listen, pointer, value } = window.popmotion;
+/*
+El código de arriba se llama destructuring. Lo que se está haciendo es algo parecido a lo siguiente:
+
+const persona = {nombre: "Dario", trabajo: "desempleado"};
+const { nombre } = persona; --> Esto es igual que decir "const nombre = persona.nombre;", sin embargo cuando se tienen varios elementos que se quiere aislar, se puede hacer de la otra forma que es lo que está haciendo este código
+console.log(nombre) --> Como se puede ver, lo que se está haciendo acá es aislar uno de los elementos dentro de un objeto para poderlo ejecutar y trabajar con él por fuera de ese objeto.
+
+*/
 
 const ball = document.querySelector('.miquito'); // Aquí cambié el elemento que estaba por defecto que era "box" por "miquito"
 const divStyler = styler(ball);
