@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swipper gallery</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/css/swiper.css"> <!-- Algunas páginas contienen códigos libres que se pueden copiar. En este caso tanto el CSS, como el JS y el HTML se importaron de la siguiente página: https://swiperjs.com/get-started/ -->
+    <!-- En https://swiperjs.com/get-started/ al ir a API (Application Program Interface) aparece toda la documentación para modificar el script. Se pueden agregar atributos al script como por ejemplo el efecto de transición entre una imagen y otra -->
+    <link rel="stylesheet" href="css/JS_gallery_swiper.css"> <!--Mi código va de último porque si el anterior no se ejecuta, este se va a ejecutar. Prevalece lo último que se escriba sobre lo primero -->
+</head>
+<body>
+    <nav class="main-nav">
+        <h1 class="miquito">
+            Arrástrame por la página 🙈 <!--Ctrl + Shipt + P para abrir el command palette y escribir emoji, ahí se abre la galería de emojis-->
+        </h1>
+    </nav>
+   
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide"><img src="img/foto1.jpg" alt="Dario" /></div>
+            <div class="swiper-slide"><h1>No tienen que ser imagenes, acá se podría incluir cualquier cosa</h1></div>
+            <div class="swiper-slide"><img src="img/foto3.jpg" alt="Dario" /></div>
+            <div class="swiper-slide"><img src="img/foto4.jpg" alt="Dario" /></div>
+            <div class="swiper-slide"><img src="img/foto5.jpg" alt="Dario" /></div>
+            <div class="swiper-slide"><img src="img/foto6.jpg" alt="Dario" /></div>
+        </div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    </div>
+
+    <p>Regresar a <a href="../index.html">Home</a></p> 
+    <script src="https://unpkg.com/popmotion/dist/popmotion.global.min.js"></script> <!-- Este script viene del siguiente sitio web que tiene una librería de scripts con objetos animados para personalizar https://popmotion.io/pure/ -->
+    <!-- La web con las instrucciones para incluir el código es https://popmotion.io/learn/get-started/ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.2/js/swiper.js"></script>
+    <script src="JS_files/gallery_swiper.js"></script> <!--Igual que con el CSS, se pone de último mi JS porque si el otro no se ejectua, este va a prevalecer. Si pusiera este código sobre el anterior, al buscar el tag "swipper" dentro del script y no encontrarlo, no lo ejecutaría-->
+</body>
+</html>
