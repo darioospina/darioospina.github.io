@@ -15,7 +15,8 @@ EJERCICIO # 1 - AJAX
 const BREEDS_URL = "https://dog.ceo/api/breeds/image/random"; 
 
 fetch(BREEDS_URL) // Fetch es para que JavaScript haga el requerimiento de información al servidor de esta página y traiga los datos de vuelta
-/* Lo que fetch trae es una promesa (promise) que corresponde a un objeto que representa un valor futuro */ 
+/* CUANDO ESTAMOS USANDO FETCH, ESTAMOS HACIENDO AJAX. ES UNA DE LAS TÉCNICAS CREADAS RECIENTEMENTE DE AJAX */ 
+/* Lo que fetch trae es una promesa (promise) que corresponde a un objeto que representa un valor futuro */
     .then(function(response){ // Entonces => Obtenga una respuesta del servior. Hasta este punto no se le ha dicho a JavaScript qué traer de esa página, podría ser un archivo, una imagen, un JS, un CSS, etc.
         return response.json(); // JSON (JavaScript Object Notation) es una sintaxis para serializar objetos, arreglos, números, cadenas, booleanos y nulos
     })
@@ -50,7 +51,7 @@ fetch(BREEDS_URL2)
     img.alt = "Lindo perrito"; // Use para la imagen el texto alternativo "Lindo perrito"
 
     document.querySelector(".perros1") // En referencia al div class "perros1" que existe en el HTML
-        .appendChild(img); // appendChild lo que hace es anexar el elemento dentro del div o el elemento seleccionado al final de éste.
+        .appendChild(img); // appendChild lo que hace es anexar el elemento dentro del div o el elemento seleccionado al final de éste. Este es el vínculo entre el script y el HTML (DOM) 
 })
 
 
@@ -90,3 +91,46 @@ function CambiarPerro() {
     })   
 }
 document.querySelector(".agregar-perro").addEventListener("click", CambiarPerro); // Aquí se está primero seleccionando el botón "agregar-perro" y diciéndole que al hacer click sobre él, ejecute la función "CambiarPerro"
+
+
+
+
+/*
+
+
+EJERCICIO # 4 - AJAX + SELECT BOX + CSS ANIMATION
+
+
+*/
+const BREEDS_URL4 = "https://dog.ceo/api/breeds/list/all";
+const select = document.querySelector(".breeds"); // Seleccionar el class "breeds" y denominarlo select
+
+fetch(BREEDS_URL4)
+    .then(function(response4){ // Se puede omitir la etiqueta function, escribiendo lo mismo así: .then(response => {})
+        return response4.json();
+    })
+    .then(function(data4){
+        // console.log(data); esto arrojaría como resultado las key y los value dentro del objeto pero de forma desordenada
+        const breedsObject = data4.message; // Este es el objeto que contiene los dog breeds (razas de perros)
+        const breedsArray =  Object.keys(breedsObject); // Aquí se convierte la lista en Array, de manera que a cada raza se le asignó un número y la lista ahora está enumerada. En el siguiente link se encuentra la literatura sobre Object.keys: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/keys 
+        
+        for (let i = 0; i < breedsArray.length; i++) { // Para cada raza crear una opción dentro de la lista desplegable
+            const option = document.createElement("option");
+            option.value = breedsArray[i];
+            option.innerText = breedsArray[i]; // Aquí ya se tiene una opción lista para ser insertada 
+            select.appendChild(option); // Esto va a anexar la opción dentro del elemento "breeds" que es la lista desplegable del HTML
+        }
+    })
+
+select.addEventListener("change", function(event) {
+   console.log(`https://dog.ceo/api/breed/${event.target.value}/images/random`); // En este punto, cada vez que se seleccione una raza de la lista de desplegable, ésta se va a incluir (se puede ver en la consola) dentro de la página web que contiene las imagenes random de perros. Se usa `` para que se puedan incluir ${valores.variables} 
+});
+
+/*
+Steps for the DOG App:
+1. Make URL ---> See the last 2 minutes from the video "change event"
+2. Show loading spinner
+3. Fetch from the API
+4. Use the URL to change the current image
+5. Stop showing loading spinner
+*/

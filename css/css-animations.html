@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Usualmente el CSS se escribe en un archivo aparte, pero también se puede crear la etiqueta dentro de HEAD en un HTML -->
+    <style> 
+
+        @keyframes spin { /* Los @keyframes permiten realizar varios tipos de animaciones como rotaciones de imagenes, de posiciones, etc. En la siguiente página aparece información sobre qué es y su uso: https://developer.mozilla.org/es/docs/Web/CSS/@keyframes */
+          to {
+            transform: rotateZ(360deg); /* La rotación puede ser sobre cualquier eje (rotateX, rotateY o rotate Z), incluso se podrían agregar varias rotaciones para que rote sobre varios ejes a la vez. Ej: transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); */
+          }
+        }
+        /* 
+        Aquí se podrían agregar varios tipos de rotaciones:
+        EJ. 1: from {transform: rotatez(0deg)} to {transform: rotatez(360deg)}
+        EJ. 2: 0% {transform: rotatez(0deg)} 70% {transform: rotate(200deg)} 100% {transform: rotate(360deg)}
+        En el primer ejemplo, la imagen rotaría tal como lo está haciendo. En ese caso se puede omitir el from y dejar solo "to", o reemplazar por 100%.
+        En el segundo ejemplo, se pueden agregar intermedios a la rotación, en ese caso, cuando llegue al 70% del tiempo, la imagen habrá rotado 200 grados, y  cuando se llegue al 100%, la imagen habrá rotado 360 grados y comenzará de nuevo.
+         */
+      
+        @keyframes psychadelic { 
+          100% {
+            filter: hue-rotate(360deg); /* hue-rotate: rota según la color wheel (rueda de colores) HSL (Hue, Saturation and Lightness) */
+            /* 
+            Filter: Permite varios juegos con las imagenes como hue-rotate (cambiar según la paleta de colores,), blur (difuminar), sepia, grayscale, etc. En la siguiente página aparecen los distintos efectos que existen: https://developer.mozilla.org/es/docs/Web/CSS/filter
+            */
+          }
+        }
+      
+        .mole {
+          height: 334px;
+          width: 334px;
+          background-color: brown;
+          border-radius: 50%;
+        }
+      
+        .color {
+          animation: psychadelic 3s linear infinite;
+        }
+      
+        .spin {
+          animation: spin 3s ease-in-out infinite alternate; 
+          /* 
+          animation: es la propiedad 
+          spin: la acción
+          3s: el tiempo que durará la acción(rotar)
+          ease-in-out: es la forma como va a rotar, se va a suavizar el giro al final. Se podría reemplazar por "linear" para que rote sin ninguna pausa
+          alternate: va a alternar la dirección del giro
+          */
+          text-align: center; /* Esto aplica solo para el título "Dario Ospina" */
+          border: 1px solid; /* Esto aplica solo para el título "Dario Ospina" */
+        }
+
+    </style>
+
+</head>
+<body>
+    
+      <img src="../aboutme/imagenes/dario2.jpg" style="background-color: brown; border-radius: 50%" class="mole color" />
+      <img src="../aboutme/imagenes/dario2.jpg" style="background-color: brown; border-radius: 50%" class="mole spin" />
+      <h1 class="spin">Dario Ospina</h1>
+      <p>Regresar a <a href="../index.html">Home</a></p> 
+
+</body>
+</html>
+
