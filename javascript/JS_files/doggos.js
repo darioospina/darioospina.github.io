@@ -102,6 +102,12 @@ EJERCICIO # 4 - AJAX + SELECT BOX + CSS ANIMATION
 
 
 */
+/* Steps for the DOG App - EXPERIMENTO # 4:
+1. Make URL ---> See the last 2 minutes from the video "change event"
+2. Show loading spinner
+3. Fetch from the API
+4. Use the URL to change the current image
+5. Stop showing loading spinner */
 const BREEDS_URL4 = "https://dog.ceo/api/breeds/list/all";
 const select = document.querySelector(".breeds"); // Seleccionar el class "breeds" y denominarlo select
 
@@ -123,14 +129,26 @@ fetch(BREEDS_URL4)
     })
 
 select.addEventListener("change", function(event) {
-   console.log(`https://dog.ceo/api/breed/${event.target.value}/images/random`); // En este punto, cada vez que se seleccione una raza de la lista de desplegable, ésta se va a incluir (se puede ver en la consola) dentro de la página web que contiene las imagenes random de perros. Se usa `` para que se puedan incluir ${valores.variables} 
-});
+    let url4 = `https://dog.ceo/api/breed/${event.target.value}/images/random`; // cada vez que se seleccione una raza de la lista de desplegable, ésta se va a incluir dentro de la página web que contiene las imagenes random de perros. Se usa `` para que se puedan incluir ${valores.variables}
+    obtenerPerrito(url4); // Aquí se llama la función para que se ejecute
+    })
 
-/*
-Steps for the DOG App:
-1. Make URL ---> See the last 2 minutes from the video "change event"
-2. Show loading spinner
-3. Fetch from the API
-4. Use the URL to change the current image
-5. Stop showing loading spinner
-*/
+const img4 = document.querySelector(".imagen-de-perro");
+const spinner = document.querySelector(".spinner") // Esto corresponde a la imagen del perrito mientras se carga la imagen
+
+function obtenerPerrito(url4) { // Función para traer la imagen del perro e insertarla dentro del img class "imagen-de-perro"
+        spinner.classList.add("show"); // Mostrar el spinner con el perrito cargando
+        img4.classList.remove("show"); // Se refiere al class "show" dentro de la etiqueta img
+        fetch(url4)
+            .then(function (response4) {
+                return response4.json();
+            })
+            .then(function(data4) {
+                img4.src = data4.message; 
+            })
+    }
+
+img4.addEventListener("load", function() {
+        spinner.classList.remove("show"); // Una vez aparezca la imagen del perro, dejar de mostrar el spinner con el perrito cargando
+        img4.classList.add("show");
+    })
