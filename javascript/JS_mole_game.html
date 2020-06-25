@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mole(topo) game</title>
+    <link rel="stylesheet" href="./css/JS_mole_game.css">
+</head>
+<body>
+    <section class="bg">
+        <div class="hole-container">
+              <div class ="hole" id="hole-0">
+                  <img data-index="0" src="./mole-imgs/mole-hungry.png" alt="mole" class="mole">
+              </div> <!--data-loQueSea="cualquierCosa" permite aislar un elemento determinado en JS. Ejemplo: si quiero obtener el 0 que está dentro de data-index, puedo escribir mole.dataset.index en la consola y me va a devolver solo ese "0". Dataset es el método usado para obtener la información del prefijo data-XYZ-->
+
+        </div>
+        <div class="hole-container">
+            <div class ="hole" id="hole-1">
+                <img data-index="1" src="./mole-imgs/mole-fed.png" alt="mole" class="mole">
+            </div>
+        </div>
+        <div class="hole-container">
+            <div class ="hole" id="hole-2">
+                <img data-index="2" src="./mole-imgs/mole-hungry.png" alt="mole" class="mole">
+            </div> <!--en línea con el anterior comentario, si se quisiera obtener de un data-index el valor específico de uno de los hoyos, se podría escribir lo siguiente en la consola:
+            topos = document.querySelectorAll(".mole") // Esto arrojaría como resultado todas las imagenes con la class="mole"
+            topos[2].dataset.index // Esto arrojaría como resultado el valor "2", si se escribiera [3], traería "3" que es el valor entre comillas correspondiente a la tercera [3] imagen, y así sucesivamente.
+            -->
+        </div>
+        <div class="hole-container">
+            <div class ="hole" id="hole-3">
+                <img data-index="3" src="./mole-imgs/mole-sad.png" alt="mole" class="mole">
+            </div>
+        </div>
+        <div class="hole-container">
+            <div class ="hole" id="hole-4">
+                <img data-index="4" src="./mole-imgs/mole-leaving.png" alt="mole" class="mole">
+            </div>
+        </div>
+        <div class="hole-container">
+            <div class ="hole" id="hole-5">
+                <img data-index="5" src="./mole-imgs/mole-hungry.png" alt="mole" class="mole">
+            </div>
+        </div>
+        <div class="hole-container">
+            <div class ="hole" id="hole-6">
+                <img data-index="6" src="./mole-imgs/mole-fed.png" alt="mole" class="mole">
+            </div>
+        </div>
+        <div class="hole-container">
+            <div class ="hole" id="hole-7">
+                <img data-index="7" src="./mole-imgs/mole-sad.png" alt="mole" class="mole">
+            </div>
+        </div>
+        <div class="hole-container">
+            <div class ="hole" id="hole-8">
+                <img data-index="8" src="./mole-imgs/mole-leaving.png" alt="mole" class="mole">
+            </div>
+        </div>
+        <div class="hole-container">
+            <div class ="hole" id="hole-9">
+                <img data-index="9" src="./mole-imgs/mole-hungry.png" alt="mole" class="mole">
+            </div>
+        </div>
+    </section>
+
+    <p>Regresar a <a href="../index.html">Home</a></p> 
+</body>
+</html>

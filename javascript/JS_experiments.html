@@ -123,12 +123,64 @@
             }
           });
         </script>
-        </script>
+        </script><br><br><br>
         <!--NOTAS DEL SCRIPT:
         Por medio de "target" se pueden accionar varios botones por medio de la misma función
         Se incluye el condicional dentro de la función para que se ejecute la función solamente sobre los botones y no sobre todo el div "contenedor-de-botones"
         -->
 
+<div>ConIntervalo <span id="ElIntervalo">0</span></div>
+        <script>
+          const ElIntervalo = document.getElementById("ElIntervalo");
+          let ConteoIntervalo = 0;
+          setInterval(function() {
+          ElIntervalo.innerText = ConteoIntervalo;
+          ConteoIntervalo++;
+          }, 1000);
+        </script>
+        <!--NOTAS DEL SCRIPT:
+        Método 1 para hacer un contador-->
+
+<div>ConRequestAnimationFrame <span id="RAF">0</span></div>
+        <script>
+        const raf = document.getElementById("RAF")
+        let rafCount = 0;
+        let runAgainAt = Date.now();
+        function rafCounter() {
+          if (Date.now() > runAgainAt) {
+            raf.innerText = rafCount;
+            rafCount++;
+            runAgainAt = Date.now() + 1000;
+          }
+          requestAnimationFrame(rafCounter);
+        }
+        requestAnimationFrame(rafCounter);
+        </script><br><br><br>
+        <!--NOTAS DEL SCRIPT:
+        Método 2 para hacer un contador. The nice thing is that requestAnimationFrame doesn't run while the browser tab isn't in focus. -->
+
+<img style="background-color: brown" id="mole-topo" src="./mole-imgs/mole-hungry.png" />
+        <script>
+        const mole = document.getElementById("mole-topo")
+
+        let isHungry = true;
+        let nextTime = Date.now();
+        function next() {
+          if (Date.now() > nextTime) {
+            if (isHungry) {
+              mole.src = "./mole-imgs/mole-sad.png"
+            } else {
+              mole.src = "./mole-imgs/mole-hungry.png"
+            }
+            isHungry = !isHungry;
+            nextTime = Date.now() + 1000;
+          }
+          requestAnimationFrame(next);
+        }
+        next();
+        </script>
+        <!--NOTAS DEL SCRIPT:
+        El signo de exclamación en !isHungry significa que se convierte a lo opuesto, es decir, si el resultado es True entonces se convierte en False y si es False, se convierte en True-->
 
     <br><br><br><p>Regresar a <a href="../index.html">Home</a></p> 
     <br>

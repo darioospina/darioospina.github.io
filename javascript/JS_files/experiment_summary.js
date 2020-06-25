@@ -973,5 +973,62 @@ NOTAS VARIAS
 /* Sobre typeof y parseInt:    
 if (typeof parseInt(value) === "number") {} // parseInt va a intentar convertir lo que sea en un número. typof está preguntando qué cosa es. En este caso se está diciendo SI el valor ingresado es un número entonces diga que es un número. 
 */
+ 
 
 
+
+
+/*
+
+
+USEFUL FUNCTIONS FOR THE GAME (FINAL PROJECT)
+
+
+*/  
+// MATH.RANDOM
+console.log(Math.random()); // Math.random() arroja un número al azar entre 0 y 1 (que corresponde a un porcentaje aleatorio)
+console.log(Math.random() > .5); // Va a arrojar true or false, es decir una probabilidad del 50% de que sea mayor a 0.5
+console.log(Math.random() > .9); // True or false aleatorio pero el 90% de las veces va a ser false y solo el 10% va a ser true
+console.log(Math.floor(Math.random() * 20)); // Número aleatorio entre 0 y 20 (como se usó Math.floor, siempre va a redondear hacia abajo el número)
+console.log(Math.floor(Math.random() * 20) +2); // Número aleatorio entre 2 y 22 (redondeado hacia abajo). Si se quisiera que fuera entre 2 y 20, en vez de *20 se debería escribir *18
+
+// Para acortar una fórmula larga, se le puede asignar un nombre a la función principal y luego usar esa función dentro de otra función. Ej:
+NumeroAlAzar = Math.random();
+console.log(Math.floor(NumeroAlAzar * 18)); 
+
+// DATE.NOW
+console.log(Date.now()); // Arroja el número de milisegundos transcurridos desde Enero 1 de 1970 (fecha que se decidió cuando se creó el UNIX Time) hasta este momento según la hora del PC.
+
+/* Si se quisiera saber el tiempo transucrrido entre dos momentos, la forma de hacerlo sería la siguiente (introducir el siguiente código en la consola):
+        UnMomento = Date.now(); // UnMomento es un nombre cualquiera para un momento determinado
+        Date.now() - UnMomento; // Arroja la diferencia entre UnMomento y el nuevo momento
+*/
+
+// SET TIME OUT
+setTimeout (function() {
+    console.log("Hola amiguitos");
+ }, 4000); // Si se quiere ejecutar una función después de transcurrido X tiempo, usar la función setTimeout. En este ejemplo, va a salir "Hola amiguitos" en la consola, después de transcurridos 4000 milisegundos = 4 segundos 
+
+
+ // SET INTERVAL
+
+/* Ejercicio 1 */ 
+    setInterval (function() {
+        console.log("Hola amiguitos, llegó el momento");
+    }, 5000); // Lo mismo anterior pero va a ocurrir ininterrupidamente cada 5 segundos
+
+/* Ejercicio 2 */
+    let numeroZ = 0;
+    setInterval (function() {
+        numeroZ++;
+        console.log(numeroZ);
+    }, 7000); // Cada 7 segundos va a sumar 1 al número anterior. Si se quisiera un intervalo de 0,5 segundos por ejemplo sería 500 en vez de 7000
+
+/* Ejercicio 3 */
+    const Intervalo = setInterval (function() {
+        console.log("Solo se va a repetir por 8 segundos y luego se va a interrumpir");
+    }, 1000); // Se va a repetir cada 1 segundo hasta transcurridos 8 segundos
+
+    setTimeout(function() {
+        clearInterval(Intervalo);
+    }, 8000); // En este caso se va a ejecutar el intervalo pero se va a interrumpir después de 8 segundos. También existe "clearTimeout" que funciona igual pero sirve para interrumpir un SetTimeout

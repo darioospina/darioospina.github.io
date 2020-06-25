@@ -1,0 +1,56 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    cursor: url(../mole-imgs/cursor.png), default; /* Es necesario incluir "default" para que por defecto, esa imagen sea el cursor de la página*/
+    background-color: #c0c86d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Esto funciona solo para navegadores nuevos. Quiere decir que utilice el 100% de la altura de la view height (vh - vista vertical). Como se puso arriba centrar, ubica todo el body en la mitad vertical de la pantalla. Si se cambiara a 80vh por ejemplo, utilizaría solo el 80% del viewport (ventana gráfica) y el body quedaría más arriba. Para width se utiliza vw (view width) */
+}
+
+.bg {
+    background-image: url(../mole-imgs/background.png);
+    background-repeat: no-repeat;
+    width: 1920px;
+    height: 1080px;
+    display: flex;
+    flex-wrap: wrap; /* Wrap permite al navegador saltar a la siguiente línea sino tiene espacio suficiente en la primera*/
+    justify-content: center;
+    align-items: center;
+}
+
+.hole {
+    background-color: black;
+    border-radius: 50%; /* 50% de border-radius equivale a un objeto redondo */
+    overflow: visible; /* Este atributo permite que si el elemento que está dentro del elemento que lo contiene es más grande que este último, entonces siga siendo visible. En este caso, si los topos son más grandes que el hoyo que los contiene, que sobresalgan / se desborden (overflow = desbordar), en este caso las paticas de los topos quedan por fuera del hoyo. 
+    Se puede aplicar este atributo a cualquier elemento, por ejemplo si el ancho de pantalla se ampliara al 200% y se pusiera "overflow: hidden" en el body, entonces se ocultaría la barra de desplazamiento y solo se vería la mitad del contenido en pantalla. 
+    Overflow puede ser "visible", "hidden" o "scroll" */
+    width: 267px;
+    height: 267px;
+}
+
+.hole-container { /* hole.container es el outer div, hole es el inter div */
+    width: 25%; /* Esto es para distrbiuir de a cuatro topos (moles) por fila que es lo que cabe en la pantalla, si los hoyos y los topos fueran más pequeños, cabrían más en una línea y los que no se irían a la siguiente línea */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mole {
+    position: relative; /* A partir de la posición actual donde se encuenta (...) */ 
+    right: 30px; /* (...) muévase 30px desde la derecha */
+}
+
+.hungry {
+    cursor: url(../mole-imgs/cursor-worm.png), default
+    /* Si se agrega la palabra "hungry" al final de algún class "mole", se puede usar como un class aparte en CSS, entonces al incluir .hungry{} en CSS se pueden modificar sus atributos como si fuera un elemento distinto, y al usar .mole{} le van a aplicar todos los demás atributos de los class "mole" también */
+}
+
+.gone {
+    display: none; /* Esto se va a usar más adelante para el juego */
+}
