@@ -47,10 +47,31 @@ body {
 }
 
 .hungry {
-    cursor: url(../mole-imgs/cursor-worm.png), default
+    cursor: url(../mole-imgs/cursor-worm.png), pointer;
     /* Si se agrega la palabra "hungry" al final de algún class "mole", se puede usar como un class aparte en CSS, entonces al incluir .hungry{} en CSS se pueden modificar sus atributos como si fuera un elemento distinto, y al usar .mole{} le van a aplicar todos los demás atributos de los class "mole" también */
 }
 
 .gone {
     display: none; /* Esto se va a usar más adelante para el juego */
 }
+
+.hide {
+    display: none;
+}
+
+.worm {
+    width: 1660px;
+}
+
+.worm-container {
+    overflow: hidden; /* En este caso como overflow es hidden, la imagen no va a desbordar el div que la contiene */
+    transition: width 0.5s ease-in-out; /* Se pueden agregar transiciones cuando haya un cambio dentro de una propiedad del HTML. En este caso cuando cambie el ancho (width) del div que contiene la lombriz, muestre una transición, que en este caso es ease-in-out que va a durar 0.5 segundos */
+}
+
+.worm-box {
+    width: 1660px;
+}
+
+.show {
+    display: block;
+}  

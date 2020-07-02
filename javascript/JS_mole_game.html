@@ -8,11 +8,16 @@
 </head>
 <body>
     <section class="bg">
+        <div class="worm-box">
+            <div style="width:5%" class ="worm-container"> <!--El div que contiene la imagen de la lombriz va a comenzar en 5% de ancho y a medida que se progrese en el juego y se ganen puntos, se va a ir ampliando el ancho del div hasta completar el 100% una vez se consigan todos los puntos para ganar-->
+                <img class="worm" src="./mole-imgs/worm.png" alt="worm score meter">
+            </div> <!--Esto corresponde al medidor de puntos que está representado por una lombriz que se va llenando en la medida en que se van sumando puntos-->
+        </div>
+
         <div class="hole-container">
               <div class ="hole" id="hole-0">
                   <img data-index="0" src="./mole-imgs/mole-hungry.png" alt="mole" class="mole">
               </div> <!--data-loQueSea="cualquierCosa" permite aislar un elemento determinado en JS. Ejemplo: si quiero obtener el 0 que está dentro de data-index, puedo escribir mole.dataset.index en la consola y me va a devolver solo ese "0". Dataset es el método usado para obtener la información del prefijo data-XYZ-->
-
         </div>
         <div class="hole-container">
             <div class ="hole" id="hole-1">
@@ -63,6 +68,8 @@
             </div>
         </div>
     </section>
+    <img class="win hide" src ="./mole-imgs/win.png" alt="You've won the game">
+    <script src="JS_files/mole_game.js"></script>
 
     <p>Regresar a <a href="../index.html">Home</a></p> 
 </body>

@@ -86,12 +86,16 @@ const getNextStatus = mole => {
       }
       mole.status = "leaving";
       break;
+
+      
     case "leaving":
       mole.next = getInterval();
       mole.king = false;
       mole.node.children[0].classList.toggle("gone", true);
       mole.status = "gone";
       break;
+
+      
     case "hungry":
       mole.node.children[0].classList.toggle("hungry", false);
       if (mole.king) {
@@ -102,6 +106,8 @@ const getNextStatus = mole => {
       mole.status = "sad";
       mole.next = getSadInterval();
       break;
+
+
     case "gone":
       mole.status = "hungry";
       mole.king = getKingStatus();
