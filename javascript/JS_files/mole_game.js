@@ -149,7 +149,7 @@ function feed(event) {
 
 function win() {
     document.querySelector(".bg").classList.add("hide"); 
-    document.querySelector(".win").classList.remove("show"); // Los class "win" y "hide" se refieren a la imagen que está en el DOM/HTML, el nombre del class es "win hide"
+    document.querySelector(".win").classList.add("show"); // Los class "win" y "hide" se refieren a la imagen que está en el DOM/HTML, el nombre del class es "win hide"
 }
 
 
