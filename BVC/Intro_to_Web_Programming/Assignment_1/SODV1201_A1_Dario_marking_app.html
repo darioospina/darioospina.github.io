@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 1 - Dario Ospina - Marking app</title>
+    <link rel="stylesheet" href="SODV1201_A1_Dario_stylesheet.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@700&display=swap" rel="stylesheet"> 
+    <!--
+    @name: Assignement1
+    @Course Code: SODV1201
+    @class: Software Development Diploma program.
+    @author: Darío Ospina Latorre
+    -->
+</head>
+<body>
+    <div class="wrapper">
+    <header class="top">
+        <div id="myName">Dario Ospina Latorre</div>
+        <div class="subtitle" id="myProfession">Software developer / Financial specialist</div>
+    </header> 
+    <div class="container">
+        <aside>
+            <a href="SODV1201_A1_Dario_index.html" class="menu">About me</a></br>
+            <a href="SODV1201_A1_Dario_marking_app.html" class="current_page menu">Marking app</a></br>
+            <a href="SODV1201_A1_Dario_staff_info.html" class="menu">Staff info</a></br>
+            <a href="SODV1201_A1_Dario_temperature_app.html" class="menu">Temperature app</a>
+        </aside>
+        <section class="content MA">
+            <div class="MA_element"><h3>Mark to Grade converter</h3>
+                <table>
+                    <tr>
+                        <td style="padding-right: 20px">Enter your Mark: </td>
+                        <td><input type="number" id="getGrade"></td>
+                        <td><button onclick="gettingGrade()">Get your Grade!</button></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="height:40px" id="mark-input-box"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">Your Grade is based on the following score table:</td>
+                    </tr>
+                    <tr>
+                        <td class="score">Grade</td>
+                        <td class="score">Mark</td>
+                    </tr>
+                    <tr>
+                        <td class="score sContent">F</td>
+                        <td class="score sContent">From 0 to 50</td>
+                    </tr>
+                    <tr>
+                        <td class="score sContent">D</td>
+                        <td class="score sContent">From 51 to 70</td>
+                    </tr>
+                    <tr>
+                        <td class="score sContent">C</td>
+                        <td class="score sContent">From 71 to 80</td>
+                    </tr>
+                    <tr>
+                        <td class="score sContent">B</td>
+                        <td class="score sContent">From 81 to 90</td>
+                    </tr>
+                    <tr>
+                        <td class="score sContent">A</td>
+                        <td class="score sContent">Above 90</td>
+                    </tr>
+                </table>
+            </div>
+
+        </section>
+    </div>
+    <footer>
+        July 23th, 2021 </br>
+        Copyright &#169 2021 Dario Ospina Latorre</footer>
+    </div>
+
+    <script src="SODV1201_A1_Dario_script.js"></script>
+</body>
+</html>
